@@ -48,7 +48,7 @@ class SurveyFormView(FormMixin, DetailView):
         self.object = self.get_object()
         if form.is_valid():
             form.save()
-            messages.success(self.request, gettext("%(page_action_name)s succeeded.") % dict(page_action_name=capfirst(self.title_page.lower())))
+            messages.success(self.request, gettext("%(page_action_name)s réussie.") % dict(page_action_name=capfirst(self.title_page.lower())))
             return self.form_valid(form)
         else:
             messages.error(self.request, gettext("Something went wrong."))
